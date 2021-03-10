@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 const Home = () => import('../views/Home/index.vue')
-const Feedbacks = () => import('../views/Feedbacks/index.vue')
-const Credencials = () => import('../views/Credencials/index.vue')
+/* const Feedbacks = () => import('../views/Feedbacks/index.vue')
+const Credencials = () => import('../views/Credencials/index.vue') */
 
-export const routes = [
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -13,7 +13,7 @@ export const routes = [
   {
     path: '/feedbacks',
     name: 'Feedbacks',
-    component: Feedbacks,
+    component: 'Feedbacks',
     meta: {
       hasAuth: true
     }
@@ -21,7 +21,7 @@ export const routes = [
   {
     path: '/credencials',
     name: 'Credencials',
-    component: Credencials,
+    component: 'Credencials',
     meta: {
       hasAuth: true
     }
@@ -33,7 +33,7 @@ export const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory('/'),
+  history: createWebHistory(process.env.BASE_URL),
   routes
 })
 

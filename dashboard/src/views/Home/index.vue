@@ -5,7 +5,9 @@
   />
   <contact />
   <div class="flex justify-center py-10 bg-brand-gray">
-    <p class="font-medium text-center text-gray-800">feedbacker © 2021</p>
+    <p class="font-medium text-center text-gray-800">
+      feedbacker © 2021
+    </p>
   </div>
 </template>
 
@@ -28,13 +30,11 @@ export default {
         router.push({ name: 'Feedbacks' })
       }
     })
-
     function handleLogin () {
       modal.open({
         component: 'ModalLogin'
       })
     }
-
     function handleAccountCreate () {
       modal.open({
         component: 'ModalAccountCreate'

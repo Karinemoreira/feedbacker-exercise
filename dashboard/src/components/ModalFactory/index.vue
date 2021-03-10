@@ -15,7 +15,6 @@
             <component :is="state.component" />
           </div>
         </div>
-
       </div>
     </div>
   </teleport>
@@ -73,3 +72,7 @@ export default {
   }
 }
 </script>
+
+<style>
+
+</style>

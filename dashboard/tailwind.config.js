@@ -2,11 +2,7 @@ const colors = require('tailwindcss/colors')
 const palette = require('./palette')
 
 module.exports = {
-  purge: [
-    './src/**/*.html',
-    './src/**/*.vue',
-    './src/**/*.jsx'
-  ],
+  purge: [],
   presets: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -149,6 +145,7 @@ module.exports = {
       wait: 'wait',
       text: 'text',
       move: 'move',
+      help: 'help',
       'not-allowed': 'not-allowed'
     },
     divideColor: (theme) => theme('borderColor'),
@@ -319,17 +316,6 @@ module.exports = {
       5: '5',
       6: '6',
       7: '7'
-    },
-    transformOrigin: {
-      center: 'center',
-      top: 'top',
-      'top-right': 'top right',
-      right: 'right',
-      'bottom-right': 'bottom right',
-      bottom: 'bottom',
-      'bottom-left': 'bottom left',
-      left: 'left',
-      'top-left': 'top left'
     },
     gridTemplateColumns: {
       none: 'none',
@@ -628,8 +614,18 @@ module.exports = {
     },
     textColor: (theme) => theme('colors'),
     textOpacity: (theme) => theme('opacity'),
-    transitionDuration: {
-      DEFAULT: '150ms',
+    transformOrigin: {
+      center: 'center',
+      top: 'top',
+      'top-right': 'top right',
+      right: 'right',
+      'bottom-right': 'bottom right',
+      bottom: 'bottom',
+      'bottom-left': 'bottom left',
+      left: 'left',
+      'top-left': 'top left'
+    },
+    transitionDelay: {
       75: '75ms',
       100: '100ms',
       150: '150ms',
@@ -639,7 +635,8 @@ module.exports = {
       700: '700ms',
       1000: '1000ms'
     },
-    transitionDelay: {
+    transitionDuration: {
+      DEFAULT: '150ms',
       75: '75ms',
       100: '100ms',
       150: '150ms',
@@ -754,13 +751,13 @@ module.exports = {
     backgroundClip: ['responsive'],
     backgroundColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     backgroundImage: ['responsive'],
-    backgroundOpacity: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
+    backgroundOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
     borderColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
-    borderOpacity: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
+    borderOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
     borderWidth: ['responsive'],
@@ -771,7 +768,7 @@ module.exports = {
     cursor: ['responsive'],
     display: ['responsive'],
     divideColor: ['responsive', 'dark'],
-    divideOpacity: ['responsive'],
+    divideOpacity: ['responsive', 'dark'],
     divideStyle: ['responsive'],
     divideWidth: ['responsive'],
     fill: ['responsive'],
@@ -826,14 +823,14 @@ module.exports = {
     placeItems: ['responsive'],
     placeSelf: ['responsive'],
     placeholderColor: ['responsive', 'dark', 'focus'],
-    placeholderOpacity: ['responsive', 'focus'],
+    placeholderOpacity: ['responsive', 'dark', 'focus'],
     pointerEvents: ['responsive'],
     position: ['responsive'],
     resize: ['responsive'],
     ringColor: ['responsive', 'dark', 'focus-within', 'focus'],
     ringOffsetColor: ['responsive', 'dark', 'focus-within', 'focus'],
     ringOffsetWidth: ['responsive', 'focus-within', 'focus'],
-    ringOpacity: ['responsive', 'focus-within', 'focus'],
+    ringOpacity: ['responsive', 'dark', 'focus-within', 'focus'],
     ringWidth: ['responsive', 'focus-within', 'focus'],
     rotate: ['responsive', 'hover', 'focus'],
     scale: ['responsive', 'hover', 'focus'],
@@ -845,7 +842,7 @@ module.exports = {
     textAlign: ['responsive'],
     textColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     textDecoration: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
-    textOpacity: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
+    textOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
     textOverflow: ['responsive'],
     textTransform: ['responsive'],
     transform: ['responsive'],

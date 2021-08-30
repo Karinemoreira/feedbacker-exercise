@@ -18,4 +18,6 @@ export function validateEmptyAndEmail (value) {
   if (!isValid) {
     return '*Este campo precisa ser um email'
   }
+
+  return true
 }

@@ -19,7 +19,7 @@
         <input
           v-model="state.email.value"
           type="email"
-          :class="{ 'border-brand-danger': !!state.email.errorMessage}"
+          :class="{ 'border-brand-danger': !!state.email.errorMessage }"
           class="block w-full px-4 py-3 mt-1 text-lg bg-gray-100 border-2 border-transparent rounded"
           placeholder="email@email.com"
         >
@@ -34,7 +34,7 @@
         <input
           v-model="state.password.value"
           type="password"
-          :class="{ 'border-brand-danger': !!state.password.errorMessage}"
+          :class="{ 'border-brand-danger': !!state.password.errorMessage }"
           class="block w-full px-4 py-3 mt-1 text-lg bg-gray-100 border-2 border-transparent rounded"
           placeholder="Senha"
         >
@@ -47,10 +47,16 @@
         :disabled="state.isLoading"
         type="submit"
         :class="{
-          'opacity-50': state.isLoading}"
+          'opacity-50': state.isLoading
+        }"
         class="px-8 pu-3 mt-10 text-2xl font-bold text-white rounded-full bg-brand-main focus:outline-none transition-all duration-150"
       >
-        Entrar
+        <icon
+          v-if="state.isLoading"
+          name="loading"
+          class="animate-spin"
+        />
+        <span v-else>Entrar</span>
       </button>
     </form>
   </div>
@@ -62,19 +68,26 @@ import { useRouter } from 'vue-router'
 import { useField } from 'vee-validate'
 import { useToast } from 'vue-toastification'
 import useModal from '../../hooks/useModal'
-import { validateEmptyAndLenght3, validateEmptyAndEmail } from '../../utils/validators'
+import Icon from '../Icon'
+import {
+  validateEmptyAndLenght3,
+  validateEmptyAndEmail
+} from '../../utils/validators'
 import services from '../../services'
 
 export default {
+  components: {
+    Icon
+  },
   setup () {
     const router = useRouter()
     const modal = useModal()
     const toast = useToast()
 
-    const {
-      value: emailValue,
-      errorMessage: emailErrorMessage
-    } = useField('email', validateEmptyAndEmail)
+    const { value: emailValue, errorMessage: emailErrorMessage } = useField(
+      'email',
+      validateEmptyAndEmail
+    )
 
     const {
       value: passwordValue,
